@@ -2,12 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <head>
-<<<<<<< HEAD
-	<meta charset="utf-8">
-	<title>Olá</title>
-
-=======
->>>>>>> b7afbc32045ff7034467019bf894e9f54080a27d
 	<style type="text/css">
 
 		::selection { background-color: #E13300; color: white; }
@@ -70,11 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-<<<<<<< HEAD
-	<h1>Oi amiguinho</h1>
-=======
 	<h1>Lista</h1>
->>>>>>> b7afbc32045ff7034467019bf894e9f54080a27d
 
 	<ul>
 		<?php 

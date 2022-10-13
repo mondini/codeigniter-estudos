@@ -1,11 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
 	<style type="text/css">
 
 		::selection { background-color: #E13300; color: white; }
@@ -68,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Olá</h1>
+	<h1>Lista</h1>
 
 	<ul>
 		<?php 

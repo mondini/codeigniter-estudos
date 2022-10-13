@@ -9,7 +9,7 @@ class Produtos extends MY_Controller {
 		$this->load->model("produtos/produtos_model");
 	}
 
-	public function index()
+	public function inicio()
 	{
 		$data['produtos'] = $this->produtos_model->getProducts();
 		$this->load->view('list', $data);

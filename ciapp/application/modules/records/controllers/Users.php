@@ -21,6 +21,27 @@ class Users extends MY_Controller{
         );
         $this->load->view('list-users', $data);
     }
+    public function lista_ajax(){
+        $data = array(
+            'titulo' => 'Usuários cadastrados',
+            'subtitulo' => 'Lista de usuários cadastrados.',
+            'styles' => array(
+                'plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css',               
+            ),
+
+            'scripts' => array(
+                'plugins/datatables.net/js/jquery.dataTables.min.js',
+                'plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
+                'js/datatables.js',
+                'js/custom.js',
+            )
+        );
+        $this->load->view('list-users-ajax', $data);
+    }
+    public function ajax_lista(){
+        $users = $this->ion_auth->users()->result(); //retorna todos os usuários
+        echo json_encode($users);
+    }
     //Edita usuários
     public function edit($usuario_id = NULL){
         if(!$usuario_id){

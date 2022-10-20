@@ -30,6 +30,9 @@
     <?php   endforeach;
             endif;?>
        <!--<script src="<?php echo base_url('assets/src/js/vendor/modernizr-2.8.3.min.js');?>"></script>-->
+       <script>
+            var base_url = "<?php echo base_url(); ?>";
+       </script>
     </head>
 
     <body>

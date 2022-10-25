@@ -5,6 +5,10 @@
     <?php $this->load->view('templates/sidebar'); ?>
                 
     <div class="main-content">
+        <!-- Mensagem de sucesso -->
+        <div class="alerta hide text-center alert bg-success alert-success text-white" role="alert">
+            Cadastro realizado com sucesso!
+        </div>
                     <div class="container-fluid">
                         <div class="page-header">
                             <div class="row align-items-end">
@@ -51,15 +55,12 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                
+                                                <tr>
+                                                    <td id="list-td"></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div id="list-div">
-                                    
                                 </div>
                             </div>
                         </div>
@@ -83,31 +84,53 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST">
-            <div class="form-group">
-                <label for="">Nome</label>
-                <input type="text" id="nome_form" class="">
+        <form id="form-users" method="POST">
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5 ">
+                    <label for="">Nome</label>
+                    <input type="text" id="nome_form" name="nome" class="form-control" placeholder="Nome">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="">Email</label>
-                <input type="email" id="email_form" class="">
-            <div class="form-group">
-                <label for="">Usuario</label>
-                <input type="text" id="usuario_form" class="">
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5">
+                    <label for="">Email</label>
+                    <input type="email" id="email_form" name="email" class="form-control" placeholder="Email">
+                </div>
             </div>
-            <div class="form-gropup">
-                <label for="">Senha</label>
-                <input type="text" id="senha_form" class="">
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5">
+                    <label for="">Usuario</label>
+                    <input type="text" id="usuario_form" name="usuario" class="form-control" placeholder="Usuario">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="">Confirmação de Senha</label>
-                <input type="password" id="confirma_senha_form" class="">
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5">
+                    <label for="">Perfil de Acesso</label>
+                    <select id="grupo_form" name="grupo" class="form-control" placeholder="Perfil">
+                        <option value="0">Selecione o perfil</option>    
+                        <option value="1">Admin</option>
+                        <option value="2">Atendente</option>
+                    </select>
+                </div>
             </div>
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5">
+                    <label for="">Senha</label>
+                    <input type="password" id="senha_form" name="senha" class="form-control" placeholder="Senha">
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center">
+                <div class="form-content col-md-6 mb-5">
+                    <label for="">Confirmação de Senha</label>
+                    <input type="password" id="confirma_senha_form" name="confirma_senha" class="form-control" placeholder="Confirmação de Senha">
+                </div>
+            </div>
+            <input type="submit">
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-        <button type="button" class="btn btn-primary">Salvar</button>
+        <button type="button" id="salva_form" class="btn btn-primary">Salvar</button>
       </div>
     </div>
   </div>

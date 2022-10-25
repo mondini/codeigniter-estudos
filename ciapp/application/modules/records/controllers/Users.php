@@ -42,6 +42,19 @@ class Users extends MY_Controller{
         $users = $this->ion_auth->users()->result(); //retorna todos os usuários
         echo json_encode($users);
     }
+    //Cadastra usuário
+    public function add(){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $user_group = $_POST['user_group'];
+        $additional_data = array(
+            'first_name'=> $name,
+            'last_name'=> 'Testonildo',
+        );
+        $this->ion_auth->register($username, $password, $email, $additional_data);
+    } 
     //Edita usuários
     public function edit($usuario_id = NULL){
         if(!$usuario_id){

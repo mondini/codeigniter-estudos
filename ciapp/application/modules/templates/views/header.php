@@ -33,6 +33,61 @@
        <script>
             var base_url = "<?php echo base_url(); ?>";
        </script>
+       <style>
+            .error{
+                color: red;
+                border-color: red;
+                font-weight: 900;
+            }
+            .alerta{
+                padding: 20px 40px;
+                min-width: 420px;
+                position: absolute;
+                right: 0px;
+                top: 10px;
+                box-shadow: 10px 10px 5px lightblue;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .alerta.showAlerta{
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .alerta.show{
+                animation: show_slide 1s ease forwards;
+            }
+            @keyframes show_slide{
+                0%{
+                    transform: translateX(100%);
+                }
+                40%{
+                    transform: translateX(-10%);
+                }
+                80%{
+                    transform: translateX(0%);
+                }
+                100%{
+                    transform: translateX(-10px);
+                }
+            }
+            .alerta.hide{
+                animation: hide_slide 1s ease forwards;
+            }
+            @keyframes hide_slide{
+                0%{
+                    transform: translateX(-10px);
+                }
+                40%{
+                    transform: translateX(0%);
+                }
+                80%{
+                    transform: translateX(-10%);
+                }
+                100%{
+                    transform: translateX(100%);
+                }
+            }
+       </style>
     </head>
 
     <body>

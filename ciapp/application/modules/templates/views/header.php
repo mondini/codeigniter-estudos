@@ -87,6 +87,9 @@
                     transform: translateX(100%);
                 }
             }
+            .text-red{
+                cursor: pointer;
+            }
        </style>
     </head>
 

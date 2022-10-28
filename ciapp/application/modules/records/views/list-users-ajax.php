@@ -38,7 +38,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <table class="table data_table">
+                                        <table id="tabela-data" class="table data_table">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Cadastrar
@@ -55,9 +55,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td id="list-td"></td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -125,7 +122,6 @@
                     <input type="password" id="confirma_senha_form" name="confirma_senha" class="form-control" placeholder="Confirmação de Senha">
                 </div>
             </div>
-            <input type="submit">
         </form>
       </div>
       <div class="modal-footer">

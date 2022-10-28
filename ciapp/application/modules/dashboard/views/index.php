@@ -6,8 +6,8 @@
                 <?php $this->load->view('templates/sidebar'); ?>
                 
                 <div class = "main-content">
-                <div class = "container-fluid">
-
+                    <div class = "container-fluid">
+                        
 
                     </div>
                 </div>

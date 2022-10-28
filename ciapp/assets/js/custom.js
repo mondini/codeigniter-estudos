@@ -5,6 +5,7 @@ $(document).on("click", "#salva_form", function(e){
     var usuario = $('#usuario_form').val();
     var senha = $('#senha_form').val();
     var perfil = $('#grupo_form').val();
+
     if($("#form-users").valid() == true){
         $("#exampleModal").modal('toggle');
         $(".alerta").removeClass("hide");
@@ -17,18 +18,20 @@ $(document).on("click", "#salva_form", function(e){
         $.ajax({
             url: base_url + 'records/users/add',
             method: 'POST',
-            data: {name: nome, email: email, username: usuario, password: senha, user_group: perfil},
-            dataType: 'json'
-        }).done(function(result){
-            console.log(result);
+            data: {name: nome, email: email, username: usuario, password: senha, user_group: perfil}
+        }).done(function(){
+            $("#tabela-data tbody").empty();
             getUsers();
         });
     }else{
         alert("Verifique o formulário!");
     }
 });
-
-
+$(document).on("click", ".remove", function(e){
+    e.preventDefault();
+    var id = $(this).data("id");
+    remove(id);
+});
 //Lista os usuários
 $(document).ready(function(){
     getUsers();
@@ -117,13 +120,21 @@ function getUsers(){
                 "<td>" + status + "</td>" +
                 "<td class='text-right' pr-25>"+
                 "<a href='/records/users/edit/"+id+"' data-toggle='tooltip' data-placement='bottom' title='Editar' class='ik ik-edit f-16 mr-15 text-green'></a>"+
-                "<a data-toggle='tooltip' data-placement='bottom' title='Inativar' class='ik ik-trash-2 f-16 text-red'></a>"+
+                "<a data-id='"+id+"' data-toggle='tooltip' data-placement='bottom' title='Inativar' class='ik ik-trash-2 f-16 text-red remove'></a>"+
                 "</td>" +
                 "</tr>";
                 $(".table tbody").append(tr_str);
             }
-            //$("td").append(response[0].id);
-            //$("td").append(response[0].first_name);
         }
       });
     }
+function remove(id){
+    $.ajax({
+        url: base_url + 'records/users/remove',
+        method: 'POST',
+        data: {id: id}
+    }).done(function(){
+        $("#tabela-data tbody").empty();
+        getUsers();
+    });
+}

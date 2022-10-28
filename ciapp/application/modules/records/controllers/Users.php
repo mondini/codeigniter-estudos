@@ -54,7 +54,17 @@ class Users extends MY_Controller{
             'last_name'=> 'Testonildo',
         );
         $this->ion_auth->register($username, $password, $email, $additional_data);
-    } 
+        if($this != 0){
+            $data = array ('response' => 'success', 'message' => 'Usuário criado!');
+        }else{
+            $data = array ('response' => 'error', 'message' => 'Falha ao criar usuário!');
+        }
+        echo json_decode($data);
+    }
+    public function remove(){
+        $id = $_POST['id'];
+        $this->ion_auth->delete_user($id);
+    }
     //Edita usuários
     public function edit($usuario_id = NULL){
         if(!$usuario_id){
